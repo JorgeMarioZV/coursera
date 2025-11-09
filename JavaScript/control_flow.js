@@ -51,3 +51,42 @@ switch (userType) {
         break;
 }
 console.log("User Category:", userCategory);
+
+
+// Step 5: Use ternary operator for isAuthenticated and authenticationStatus
+// -------------------------------------------------------------------------------
+let isAuthenticated = true;
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
+
+console.log("Authentication Status:", authenticationStatus);
+
+
+// Step 6: Perform Git commands
+// -------------------------------------------------------------------------------
+/*  > git add --a
+    > git config --global user.email "you@example.com"
+    > git config --global user.name "Your Name"
+    > git commit -m "message"
+    > git push origin
+*/
+
+
+// Practice Task
+// -------------------------------------------------------------------------------
+let companyRole = "employee";
+let dietaryService;
+switch (companyRole) {
+    case "employee":
+        dietaryService = "Authorized to have access to \"Dietary Service\"";
+        break;
+    case "enrolled":
+        dietaryService = "Authorized to have access to \"Dietary Service\" and One-on-One Interaction with Dietician";
+        break;
+   case "subscriber":
+        dietaryService = "Authorized to have partial access to facilitate \"Dietary Service\" only";
+        break;
+    default:
+        dietaryService = "You need to enroll or subscribe firt to avil this facility";
+        break;
+}
+console.log("Service Available:", dietaryService);
