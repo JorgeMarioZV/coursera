@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let limit = 50;
+        let a = 0;
+        let b = 1;
+        while (a <= limit) {
+            // window.console.log(a); // Writes all numbers in console
+            document.write(a); // Writes all numbers inline
+            //document.write("<p>"+a+"</p>"); // Writes all numbers
+            // document.getElementById("demo").innerHTML= "<h2>"+a+"</h2>"; // Writes only last number
+            let temp = a + b;
+            a = b;
+            b = temp;
+        }
+    </script>
+</body>
+</html>
+<!--Fibonacci Sequence-->
