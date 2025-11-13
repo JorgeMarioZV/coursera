@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="functiondata1"></p>
+    <p id="functiondata2"></p>
+    <p id="functiondata3"></p>
+    <p id="functiondata4"></p>
+    <script>
+        (mul = () => {
+            console.log(10*5);
+            return 0;
+        })(); // Output: 50 (In Console)
+        document.getElementById("functiondata1").innerHTML = mul; // Output: () => {console.log(10*5); return 0;} (in Viewport)
+        document.getElementById("functiondata2").innerHTML = mul(); // Output: 50 (In Console), 0 (in Viewport)
+        
+        (() => {
+            console.log(7*5);
+        })(); // Output: 35 (in Console)
+        
+        let a = 3;
+        let b = 4;
+        c = 10; // Qué tipo de variab es esta? let, var, const?
+        ((a=12,b=4) => {
+            console.log(a * b);
+            let myvar = a * b;
+            return  myvar;
+        })(); // Output: 48 (In Console)
+        // document.getElementById("functiondata3").innerHTML =  myvar; // Output: No hay forma de acceder a myvar dentro de la función
+
+        console.log(() => 3*7);  // output: () => 3*7 (in Console)
+        console.log((() => 3*7)());  // output: 21 (in Console)
+        console.log((() => {3*7})());  // output: undefined (in Console)
+        console.log((() => {return 3*7})());  // output: 21 (in Console)
+
+        console.log(function (a,b) {a**2+b});  // output: ƒ (a,b) {a**2+b} (in Console)
+        console.log(function (a,b) {return a**2+b});  // output: ƒ (a,b) {return a**2+b} (in Console)
+        console.log((function (a,b) {return a**2+b})());  // output: NaN (in Console)
+        console.log((function (a=9,b=1) {return a**2+b})());  // output: 82 (in Console)
+
+        function myfun() {return 1000}  // output: ƒ myfun() {return 1000} (in Console)
+        console.log(myfun);  // output: ƒ myfun() {return 1000} (in Console)
+        console.log(myfun());  // output: 1000
+        
+        const d = myfun;
+        console.log(d+" - otro");  // output: function myfun() {return 1000} - otro (in Console)
+        
+        const f = d();
+        console.log(f);  // output: 1000 (in Console)
+        console.log(f()); //Throws TypeError
+        
+    </script>
+</body>
+</html>
