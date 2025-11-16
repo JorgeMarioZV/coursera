@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouseover Event Handling</title>
+</head>
+<body>
+    <label for="myInput">Dato</label>
+    <input type="text" name="" id="myInput"><br>
+    <p id="output"></p>
+    <p id="demo"></p>
+
+    <script>
+        const myInput = document.getElementById("myInput");
+        const output = document.getElementById("output");
+
+        myInput.onkeydown = (event) => {  // No parece ser necesario el argumento
+            output.textContent = `Key pressed: ${event.key}`;
+        }
+
+        // if (event.key === 'Enter') {
+        //        document.getElementById("demo").innerHTML = event.key;
+        //        output.textContent = `Key pressed: ${event.key}`;
+        // }
+    </script>
+</body>
+</html>

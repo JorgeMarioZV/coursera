@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouseover Event Handling</title>
+</head>
+<body>
+    <!-- Alternative 1
+    <button id="bybutton" onclick="handleButtonClick()">Click Me!</button>
+    <script>
+        function handleButtonClick() {
+            window.alert("Button Clicked!");
+        }
+    </script> -->
+
+    <!-- Alternative 2
+    <button id="mybutton">Click Me!</button>
+    <script>
+        const mybutton = document.getElementById("mybutton");
+        mybutton.onclick = () => {window.alert("Button Clicked!");}
+    </script> -->
+
+    <!-- Alternative 3
+    <button id="mybutton">Click Me!</button>
+    <script>
+        const mybutton = document.getElementById("mybutton");
+        mybutton.addEventListener("click", handleButtonClick);
+        function handleButtonClick () {window.alert("Button Clicked!");}
+    </script> -->
+
+    <!-- Alternative 4 -->
+    <button id="mybutton">Click Me!</button>
+    <script>
+        const mybutton = document.getElementById("mybutton");
+        mybutton.addEventListener("click", () => {window.alert("Button Clicked!")})
+    </script>
+
+</body>
+</html>

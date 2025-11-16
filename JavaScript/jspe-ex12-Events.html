@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+    <p id="output"></p>
+    <script>
+        const myButton = document.getElementById("myButton");
+        const output = document.getElementById("output");
+
+        // Alternative 1
+        // myButton.onclick = function click () {
+        //     output.textContent = "Button Clicked!!!";
+        // }
+
+        // Alternative 2
+        // myButton.onclick = function () {
+        //     output.textContent = "Button Clicked!!!"; }
+
+        // Alternative 3
+        myButton.onclick = () => {output.textContent = "Button Clicked!!!";}
+    </script>
+</body>
+</html>

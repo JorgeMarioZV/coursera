@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouseover Event Handling</title>
+</head>
+<body>
+    <div id="myDiv">Hover Over Me!</div>
+    <p id="output"></p>
+    <script>
+        const myDiv = document.getElementById("myDiv");
+        const output = document.getElementById("output");
+
+        myDiv.onmouseover = function () {
+            output.textContent = "Mouse over the Div Element";
+            // output.innerHTML = "Mouse over the Div Element"; // Funciona También
+        }
+    </script>
+</body>
+</html>

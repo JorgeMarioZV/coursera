@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouseover Event Handling</title>
+</head>
+<body>
+    <label for="myInput">Dato</label>
+    <input type="text" name="" id="myInput"><br>
+    <p id="output"></p>
+    <p id="demo"></p>
+
+    <script>
+        const input = document.getElementById("myInput");
+        const output = document.getElementById("output");
+        console.log(input);
+        console.log(output);
+        
+        input.onchange = () => {
+            output.textContent = `Value changed to ${input.value}`;
+            console.log(output);
+        }
+
+        // if (event.key === 'Enter') {
+        //        document.getElementById("demo").innerHTML = event.key;
+        //        output.textContent = `Key pressed: ${event.key}`;
+        // }
+    </script>
+</body>
+</html>
