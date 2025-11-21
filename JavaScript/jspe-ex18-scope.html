@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope - Var, Let, Const</title>
+</head>
+<body>
+    <script>
+        var myvar = "myvar";
+        let mylet = "mylet";
+        const myconst = "myconst";
+
+        console.log(myvar);
+        console.log(mylet);
+        console.log(myconst);
+        
+        {
+            // console.log(myvar); // Se imprimen - Son globales
+            // console.log(mylet); // Se imprimen - Son globales
+            // console.log(myconst); // Se imprimen - Son globales
+            
+            var myvar = "myvar2"; // Puede ser redeclarada antes y despues e usarse en el scope
+            let mylet = "mylet2"; // ReferenceError - Debe declararse antes de usarse en el scope
+            const myconst = "myconst2"; // ReferenceError - Debe declararse antes de usarse en el scope
+
+
+        }
+
+        var myvar = "myvar3"; // Puede ser redeclarada
+        let mylet = "mylet4"; // No puede ser redeclarada
+        const myconst = "myconst4"; // No puede ser redeclarada
+
+        // function myfun() {
+        //     console.log(myvar);
+        //     console.log(mylet);
+        //     console.log(myconst);
+
+        //     var myfunvar = "myfunvar";
+        //     let myfunlet = "myfunlet";
+        //     const myfunconst = "myfunconst";
+        // }
+
+        // console.log(myvar);
+        // console.log(mylet);
+        // console.log(myconst);
+
+
+    </script>
+</body>
+</html>
