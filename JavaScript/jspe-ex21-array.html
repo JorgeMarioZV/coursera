@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = [
+            {name : 'Laptop', price : 1000},
+            {name : 'Smartphone', price : 500},
+            {name : 'Tablet', price : 300},
+            {name : 'Monitor', price : 250},
+            {name : 'Keyboard', price : 50},
+        ];
+
+        const minprice = 100;
+        const maxprice = 500;
+
+        function filterProductByPriceRange(products, minprice, maxprice) {
+            return products.filter((myproduct) =>
+                myproduct.price >= minprice && myproduct.price <= maxprice
+            );
+        }
+
+        const filteredProducts = filterProductByPriceRange(products, minprice, maxprice);
+        console.log(filteredProducts);
+        filteredProducts.forEach((myfilteredProduct) =>
+            console.log(`The price of ${myfilteredProduct.name} is ${myfilteredProduct.price}`)
+        );
+    </script>
+</body>
+</html>

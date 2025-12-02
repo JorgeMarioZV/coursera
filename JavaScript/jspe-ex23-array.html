@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Result:</h1><hr><br>
+    <p id="info"></p>
+    <script>
+        const employees = [
+            {id : 1, name : 'Alice', Eid : 'EMP001', 'contact Details' : 'alice@example.com', Role : 'Manager', Designation : 'Project Manager', Experience : '5 years'},
+            {id : 2, name : 'Bob', Eid : 'EMP002', 'contact Details' : 'bob@example.com', Role : 'Engineer', Designation : 'Software Engineer', Experience : '3 years'},
+            {id : 3, name : 'Charlie', Eid : 'EMP003' , 'contact Details' : 'charlie@example.com', Role : 'Analyst', Designation : 'Data Analyst', Experience : '2 years'},
+            {id : 4, name : 'Eddie', Eid : 'EMP004', 'contact Details' : 'eddie@example.com', Role : 'Intern', Designation : 'Junior Dev', Experience : '0 years'},
+        ];
+        const valueToFind = 3;
+        const myemployeeFound = employees.find((myemployee) =>
+            myemployee.id === valueToFind
+        );
+        document.getElementById('info').innerHTML = `<b style='color:red;'>The Employee Data is :<br>
+            Name : ${myemployeeFound.name}<br>
+            Employee ID : ${myemployeeFound.Eid}<br>
+            Contact Detals : ${myemployeeFound['contact Details']}<br>
+            Role : ${myemployeeFound.Role}<br>
+            Designation : ${myemployeeFound.Designation}<br>
+            Experience : ${myemployeeFound.Experience}<br>
+            </b>`;
+    </script>
+</body>
+</html>

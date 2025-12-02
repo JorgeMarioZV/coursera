@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orderPrices = [50, 30, 25, 40, 15];
+        const totalOrderValue = orderPrices.reduce((total, price) =>
+            total = total + price,
+            0
+        );
+        console.log('Total: '+totalOrderValue);
+    </script>
+</body>
+</html>

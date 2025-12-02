@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seating-chart {
+            display: grid;
+            grid-template-columns: repeat(3, 70px);
+            gap: 10px;
+            justify-content: center;
+            /* border: solid black; */
+        }
+
+        .seat {
+            width: 70px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .booked {
+            color: white;
+            background-color: #FF0000;
+            cursor: not-allowed;
+        }
+
+        .available {
+            background-color: #7FFF00;
+        }
+
+        .select-button {
+            /* border: 1px black solid; */
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="seating-chart" id="seating-chart">
+        <!-- <div class="seat available" onclick="bookSeat(0,0)">A1</div> -->
+    </div>
+    <div class="select-button" onclick="bookRandomSeat()">Select Random Seat</div>
+    <script>
+        // Crea arreglo Nombre para Asientos 2D
+        // ----------------------------------------------------------------
+        // const seats = []; // NO sirve para declarar de varias dimensiones
+        const rows = 3, columns = 3;
+        // const seats = new Array(rows,columns); // No sirve muy bien
+        let seats = Array(rows).fill(null).map(() => Array(columns));
+        // console.log(seats);
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
+                seats[i][j] = String.fromCharCode(65+i) + (j+1);
+            }
+        }
+        // console.log(seats);
+        // ----------------------------------------------------------------
+        
+        // Crea Diagrama de Arreglo de Asientos en HTML
+        // ----------------------------------------------------------------
+        // let grid = '<div class="seating-chart" id="seating-chart">\n'; // No es necesario
+            let grid = '';
+            seats.forEach((row,i) => {
+                row.forEach((value, j) => {
+                    grid +=  
+                    `<div class="seat available" onclick="bookSeat(${i},${j})">${seats[i][j]}</div>\n`
+                });
+            });
+            // grid += '</div>'; // No es necesario
+            document.getElementById('seating-chart').innerHTML = grid;
+        // ----------------------------------------------------------------
+
+        const theaterSeats = [
+            ['X', '0', 'X'],
+            ['0', 'X', '0'],
+            ['X', '0', 'X']
+        ];
+
+        function bookSeat (row, col) {
+            if (theaterSeats[row][col] == '0') {
+                theaterSeats[row][col] == 'X';
+                updateSeatStatus(row, col, 'booked');
+                // console.log(row);
+                // console.log(col);
+                window.alert(`Good! Seat ${seats[row][col]} has been successfully booked!`);
+            } else {
+                window.alert(`Sorry! Seat ${seats[row][col]} is already taken!`);
+            }
+        }
+
+        function updateSeatStatus (row, col, status) {
+            const seats = document.getElementsByClassName('seat');
+            const index = 3*row + col;
+            // console.log(seats);
+            seats[index].classList.remove('available','booked');
+            seats[index].classList.add(status);
+        }
+
+        function bookRandomSeat() {
+            const availableSeats = [];
+            for (let row = 0; row < theaterSeats.length; row++) {
+                for (let col = 0; col < theaterSeats[row].length; col++) {
+                    if (theaterSeats[row][col] == '0')
+                        availableSeats.push({row, col});
+                }
+            }
+            if (availableSeats.length > 0) {
+                const randomIndex = Math.floor(Math.random()*availableSeats.length);
+                const {row, col} = availableSeats[randomIndex];
+                bookSeat(row, col);
+            } else {
+                alert('All seats are already booked.');
+            }
+        }
+    </script>
+</body>
+</html>

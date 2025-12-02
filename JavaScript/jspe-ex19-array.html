@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+            {name: 'Alice', email: 'alice@example.com'},
+            {name: 'Bob', email: 'bob@example.com'},
+            {name: 'Charlie', email: 'charlie@example.com'},
+        ];
+
+        function welcomeMessage(user_mail) {
+            console.log("Email sent to: "+user_mail);
+        }
+
+        users.forEach(
+            (user) => welcomeMessage(user.email) 
+        );
+        // users.forEach( // Or simply this one
+        //     (user) => console.log("Email sent to: "+user.email) 
+        // );
+
+        
+    </script>
+</body>
+</html>
