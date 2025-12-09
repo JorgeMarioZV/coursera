@@ -12,8 +12,8 @@
             {name : 'Smartphone', price : 500},
             {name : 'Tablet', price : 300},
         ];
-        products.map((products) => 
-            console.log(`The price of ${products.name} is ${products.price}`)
+        const results = products.map((product) =>
+            console.log(`The price of ${product.name} is ${product.price}`)
         );
         // const hell0 = products.map((products) => 
         //     {console.log(`The price of ${products.name} is ${products.price}`);
@@ -21,6 +21,9 @@
         //     }
         // );
         // console.log(hell0);
+        console.log("Outcomes: \n" + results); // results es un array de undefined porque la función no tienen ningún retorno
+        console.log("Outcomes Type: \n" + typeof results); 
+        
     </script>
 </body>
 </html>

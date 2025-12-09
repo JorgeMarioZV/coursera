@@ -31,12 +31,18 @@
         .available {
             background-color: #7FFF00;
         }
+        
+        .random-button {
+            display: grid;
+            grid-template-columns: repeat();
+            justify-content: center;
+        }
 
         .select-button {
             /* border: 1px black solid; */
-            width: 100%;
+            width: 210px;
             padding: 10px;
-            margin: 10px;
+            margin: 10px 0px;
             background-color: #007BFF;
             color: white;
             cursor: pointer;
@@ -48,7 +54,9 @@
     <div class="seating-chart" id="seating-chart">
         <!-- <div class="seat available" onclick="bookSeat(0,0)">A1</div> -->
     </div>
-    <div class="select-button" onclick="bookRandomSeat()">Select Random Seat</div>
+    <div class="random-button">
+        <div class="select-button" onclick="bookRandomSeat()">Select Random Seat</div>
+    </div>
     <script>
         // Crea arreglo Nombre para Asientos 2D
         // ----------------------------------------------------------------

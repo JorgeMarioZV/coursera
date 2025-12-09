@@ -13,18 +13,16 @@
             {name: 'Charlie', email: 'charlie@example.com'},
         ];
 
-        function welcomeMessage(user_mail) {
-            console.log("Email sent to: "+user_mail);
-        }
-
         users.forEach(
-            (user) => welcomeMessage(user.email) 
+            (current_user) => welcomeMessage(current_user.email)
         );
         // users.forEach( // Or simply this one
         //     (user) => console.log("Email sent to: "+user.email) 
         // );
 
-        
+        function welcomeMessage(user_mail) {
+            console.log("Email sent to: " + user_mail);
+        }
     </script>
 </body>
 </html>

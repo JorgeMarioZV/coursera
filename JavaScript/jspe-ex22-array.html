@@ -9,7 +9,8 @@
     <script>
         const orderPrices = [50, 30, 25, 40, 15];
         const totalOrderValue = orderPrices.reduce((total, price) =>
-            total = total + price,
+            {return total = total + price},
+            // total = total + price // Or simply this
             0
         );
         console.log('Total: '+totalOrderValue);
