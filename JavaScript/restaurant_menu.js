@@ -2,9 +2,6 @@ const breakfastMenu = ['Pancakes', 'Eggs Benedict', 'Oatmeal', 'Frittata'];
 const mainCourseMenu = ['Steak', 'Pasta', 'Burger', 'Salmon'];
 const dessertMenu = ['Cake', 'Ice Cream', 'PUdding', 'Fruit Salad'];
 
-
-
-
 const breakfastMenuItemsHTML = breakfastMenu.map(
     (item,index) =>`<p>Item ${index + 1}: ${item}</p>`
     // (item,index) =>{return `<p>Item ${index + 1}: ${item}</p>`} // Alternative 2

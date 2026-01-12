@@ -125,6 +125,7 @@
                 const randomIndex = Math.floor(Math.random()*availableSeats.length);
                 const {row, col} = availableSeats[randomIndex];
                 bookSeat(row, col);
+                //console.log({row, col});
             } else {
                 alert('All seats are already booked.');
             }

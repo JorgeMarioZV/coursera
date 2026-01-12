@@ -24,7 +24,7 @@ function submitFeedback () {
     
     // Step 3: Display user feedback on webpage
     // --------------------------------------------------------------------------
-    document.getElementById("userName").innerHTML = username;
+    document.getElementById("userName").innerHTML = `<b>${username}</b>`;
     document.getElementById("userAge").innerHTML = age;
     document.getElementById("userEmail").innerHTML = email;
     document.getElementById("userJob").innerHTML = job;

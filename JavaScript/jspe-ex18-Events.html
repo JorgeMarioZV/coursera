@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="keyInput">
+    <script>
+        keyInput = document.getElementById("keyInput");
+        keyInput.addEventListener('keydown',function () {
+            console.log('Key pressed down!');
+        }, { once: true }); // El uso de la opción 'once' para que el evento se dispare solo una vez
+        keyInput.addEventListener('keyup', function () {
+            console.log('Key released!');
+        });
+        keyInput.addEventListener('keypress', function () {
+            console.log('Key pressed!');
+        });
+
+
+    </script>
+</body>
+</html>
