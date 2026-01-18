@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mySuperArray = [];
+        // mySuperArray.push({ name: "Alice", age: 30 });
+        mySuperArray[0] = {
+            name: "Alice",
+            age: 30,
+            hobbies: ["reading", "hiking", "coding"],
+            address: {
+                street: "123 Main St",
+                city: "Wonderland",
+                zip: "12345"
+            },
+        };
+
+        mySuperArray[1] = {
+            name: "Bob",
+            age: 25,
+            skills: [
+                {title: "JavaScript", completed: true},
+                {title: "JavaScript", completed: true}
+            ]
+        };
+        
+        mySuperArray[2] = {
+            title: "Special Object",
+            Data: [2, 3, 4],
+            metadata: {key: 'value'}
+        };
+
+        mySuperArray[3] = {};
+
+        mySuperArray[4] = {
+            anotherObject: true,
+            nestedArrays: [
+                [1, 2, 3],
+                ['a', 'b', 'c']
+            ],
+            additionalProperty: 'Extra'
+        };
+        console.log(mySuperArray);
+        console.log(mySuperArray[0].age);
+        console.log(mySuperArray[2].Data[1]);
+        
+    </script>
+</body>
+</html>
