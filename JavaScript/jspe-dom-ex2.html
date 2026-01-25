@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="my-list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <div id="my-container">
+        <p>This is the FIRST paragraph inside the container.</p>
+        <p>This is the SECOND paragraph inside the container.</p>
+        <p>This is the THIRD paragraph inside the container.</p>
+    </div>
+
+
+    <button id="my-button">Click Me</button>
+    <script>
+        const list = document.getElementById('my-list');
+        
+        // *********** Adding Elements ***********
+        const newItem = document.createElement('li');
+        newItem.textContent = 'Item 4';
+        list.appendChild(newItem);
+
+        // Removing Elements
+        const secondItem = list.querySelector('li:nth-child(1)');
+        list.removeChild(secondItem);
+
+        // *********** Cloning Elements ***********
+        const firstItem = list.querySelector('li'); // First <li> element
+        const clonedItem = firstItem.cloneNode(true);
+        list.appendChild(clonedItem); // Insert at the end
+        // list.insertBefore(clonedItem, null); // Insert at the end
+        // list.insertBefore(clonedItem, firstItem.nextSibling); // Insert after the first item
+        // list.insertBefore(clonedItem, firstItem); // Insert at the beginning
+        // list.insertBefore(clonedItem, firstItem.nextSibling); // Insert after the first item
+        // const lastItem = list.querySelector('li:last-child'); // Last <li> element
+        // const firstItem = list.getElementsByTagName('li')[0];
+
+        // *********** Reordering Elements ***********
+        const container = document.getElementById('my-container');
+        const secondParagraph = container.querySelector('p:nth-child(2)');
+        container.insertBefore(secondParagraph, container.querySelector('p')); // Move to the beginning
+        // const secondParagraph = container.getElementsByTagName('p')[1];
+        // container.removeChild(secondParagraph);
+        // container.replaceChild(document.createTextNode('This paragraph has been replaced.'), secondParagraph);
+        // container.insertBefore(document.createTextNode('This paragraph has been inserted before the second paragraph.'), secondParagraph);
+        // container.insertBefore(document.createElement('hr'), secondParagraph);
+        // container.insertBefore(secondParagraph, container.firstChild);
+        // container.insertBefore(secondParagraph, null); // Move to the end
+        // container.insertBefore(secondParagraph, container.lastChild.nextSibling);
+        // container.insertBefore(secondParagraph, container.querySelector('p:nth-child(3)').nextSibling);
+        
+        // *********** Handling Events ***********
+        const button = document.getElementById('my-button');
+        button.addEventListener('click', () => {
+            alert('Button was clicked!');
+        });
+    </script>
+</body>
+</html>

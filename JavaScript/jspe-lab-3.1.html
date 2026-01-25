@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        .strikethrough { /*.strikethrough - This was added by me to improve the code*/
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <input type="text" id="taskInput" placeholder="Add a new task">
+    <button id="addTaskBtn" onclick="addTask()">Add task</button>
+    <!-- <button id="addTaskBtn">Add task</button> -->
+
+    <!-- <input type="text" id="taskInput" placeholder="Search..."> -->
+    <ul id="taskList">
+        <!-- Task will be displayed here -->
+    </ul>
+    <button id="clearCompletedBtn" onclick="clearCompletedTasks()">Clear Completed</button>
+    <!-- <button id="clearCompletedBtn">Clear Completed</button> -->
+    <button id="clearAllBtn" onclick="clearAllTasks()">Clear All</button> 
+    <!-- button.clearAllBtn[onclick]{Clear All} -->
+    <!-- [{}.# -->
+    <script src="./todo_list.js"></script>
+</body>
+</html>

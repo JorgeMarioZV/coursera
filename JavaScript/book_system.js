@@ -46,7 +46,8 @@ function displayBooks() {
         <p>Author Name: ${book.author}</p>
         <p>Description: ${book.description}</p>
         <p>Number of Pages: ${book.pages}</p>
-        <button onclick="editBook(${index})">Edit Book</button>`
+        <button onclick="editBook(${index})">Edit</button>
+        <button onclick="deleteBook(${index})">Delete</button>`
     );
     document.getElementById("books").innerHTML = booksDiv.join("<hr/>");
 }
@@ -78,4 +79,9 @@ function clearInputs() {
     document.getElementById("pagesNumber").value = "";
 }
 
-// A este codigo hay que arreglarle que al editar un libro, no se debe agregar uno nuevo, sino que se debe actualizar el existente en la misma posicion del anterior
+function deleteBook(index) {
+    books.splice(index, 1);
+    displayBooks();
+}
+
+// A este codigo hay que arreglarle que al editar un libro, no se debe agregar uno nuevo, sino que se debe actualizar el existente en la misma posicion del anterior. Lo arregle casi que inmediatamente con copilot AI

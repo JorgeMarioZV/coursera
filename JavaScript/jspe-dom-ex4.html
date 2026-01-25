@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList Example</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        } 
+        .underline {
+            text-decoration: underline;
+        }
+        .strikethrough { /*.strikethrough*/
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <p id="myParagraph" class="highlight">This is a paragraph.</p>
+    <button onclick="performClassListOperations()">Perform Operations</button>
+    <script>
+        function performClassListOperations() {
+            const paragraph = document.getElementById("myParagraph");
+
+            // Adding a Class
+            paragraph.classList.add("italic");
+
+            // Remove a class
+            paragraph.classList.remove("highlight");
+
+            // Toggling a Class
+            paragraph.classList.toggle("underline",true); // Always adds the class
+
+            //Cheking if a class exists
+            const hasItalicClass = paragraph.classList.contains("italic");
+            console.log("Has italic class", `${hasItalicClass}`);
+            // console.log("Has italic class", (hasItalicClass) ? "Yes" : "No");
+
+            //Replacing a class after a delay (for demonstration purposes)
+            setTimeout(() => {
+                paragraph.classList.replace("underline", "strike");
+
+                // Accessing classes as a string
+                const classString = paragraph.classList.toString();
+                console.log("Current Classes:", `${classString}`);
+
+                //Accessing class by index
+                // const firstClass = paragraph.classList.item(0);
+                // console.log("First class:", firstClass);
+            }, 2000);
+        }
+    </script>
+        
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector All Example</title>
+</head>
+<body>
+    <p class="highlighted">This is a highlighted paragraph.</p>
+    <p id="myElement" class="highlighted">This is another highlighted paragraph.</p>
+    <p class="myclass">Some random text</p>
+    <p class="myclass">Another random text: lipsum10 dolor sit amet, consectetur adipiscing elit. </p>
+    <p class="myclass otherclass">This is a regular paragraph: Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, dolor.</p>
+    
+    <script>
+        const element = document.getElementById("myElement");
+        const classes = element.classList;
+        // Log the selected elements to the console
+        console.log(element);
+        console.log(classes);
+
+        console.log("**********************");
+        element.classList.add("new-class-added");
+        console.log("After adding new-class-added:", element.classList);
+
+        console.log("**********************");
+        element.classList.remove("highlighted");
+        console.log("After removing highlighted:", element.classList);
+
+        console.log("**********************");
+        element.classList.toggle("toggled-class"); // Class tooggled-class is added
+        console.log("After toggling toggled-class (1st time):", element.classList);
+        element.classList.toggle("toggled-class"); // Class tooggled-class is removed
+        console.log("After toggling toggled-class (2nd time):", element.classList);
+        
+        console.log("**********************");
+        let value = element.classList.contains("myclass") ? "Element has the class myclass" : "Element DOESN'T have the class myclass";
+        console.log(value);
+        
+        console.log("**********************");
+        element2 = document.querySelectorAll("p.myclass")[1]; // seleccionar 2ndo <p> con clase "myclass"
+        // element2 = document.querySelectorAll("p")[1];
+        // element2 = document.querySelector("p.myclass"); // Funciona si solo hay uno
+        console.log(element2);
+        element2.classList.replace("myclass", "replaced-class");
+        console.log("After replacing myclass with replaced-class:", element.classList);
+            
+        console.log("**********************");
+        const element3 = document.querySelector("p.myclass.otherclass"); // seleccionar <p> con clase "myclass" y "otherclass"
+            // const element3 = document.querySelectorAll("p.myclass.otherclass")[0]; // En caso de que haya mas de un elemento
+        console.log(element3);
+        const secondClassName = element3.classList.item(1); // get the second class
+        console.log("Second class of the element:", secondClassName);
+        // element.classList.forEach((cls) => {
+        //     console.log("Class:", cls);
+        // });
+                
+        console.log("**********************");
+        const classString = element3.classList.toString();
+        console.log("All classes as string:", classString);
+        // for (const cls of element3.classList) {
+        //     console.log("Class from for...of loop:", cls);
+        // }
+        // const allClasses = Array.from(element3.classList);
+        // allClasses.forEach((cls) => {
+        //     console.log("Class from Array.from:", cls);
+        // });
+
+        console.log("**********************");
+        const classValue = element3.classList.value;
+        const className = element3.className;
+        console.log("All classes as name:", className);
+        console.log("All classes as value:", classValue);
+        //  ClassString, ClassName and ClassValue return the same result.
+        //  DO they do the same thing? Answer: Yes, they return the same string representation of the class list. 
+    </script>
+</body>
+</html>

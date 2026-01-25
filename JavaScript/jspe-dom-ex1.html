@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to the Example Page</h1>
+    <p id="content-paragraph">This is an example for the getElementById Method</p>
+    <h2 class="highlighted">This is an example for the getElementsByClassName Method</h2>
+    <p>This is an example for getElementByTagName</p>
+    <p>This is another example for getElementByTagName</p>
+    <h2 class="highlighted">This is another example for the getElementsByClassName Method</h2>
+    <p>This is a regular paragraph</p>
+    para
+    <script>
+        // *************** getElementById ***************
+        // Access the element with the id "main-leading" using getElementById
+        const contentParagraph = document.getElementById('content-paragraph');
+        console.log(contentParagraph);
+
+        // *************** getElementsByClassName ***************
+        // Access elements with the class name "highlighted" using getElementsByClassName
+        const highlightedElements = document.getElementsByClassName('highlighted');
+        for (let i = 0; i < highlightedElements.length; i++) {
+            highlightedElements[i].innerHTML = '<span style="background-color: yellow;">This paragrah is now highlighted!<span>';
+                console.log(highlightedElements[i]);
+            }
+        
+        // *************** getElementsByClassName ***************
+        // Access all <p> elements using getElementsByTagName
+            const paragraphElements = document.getElementsByTagName('p');
+            for (let i = 0; i < paragraphElements.length; i++) {
+                paragraphElements[i].style.color = 'blue';
+                // paragraphElements[i].style.fontWeight = 'bold';
+                console.log(paragraphElements)
+                console.log(paragraphElements[i]);
+            }
+            
+            // *************** querySelector ***************
+            // Select the element with the ID "main-heading" using querySelector
+            const myElementByID = document.querySelector('#main-heading');
+             myElementByID.style.textDecoration = 'underline';
+             console.log(myElementByID);
+            // Select all elements with the class "highlighted" using querySelectorAll
+            const myElementByClass = document.querySelectorAll('.highlighted');
+            console.log(myElementByClass);
+            for (let index = 0; index < myElementByClass.length; index++) {
+                myElementByClass[index].style.fontStyle = 'italic';
+            }
+            // Select the first <P> element that matches a CSS selector using querySelector
+            const myElementByTag = document.querySelector('p');
+            myElementByTag.style.fontSize = '50px';
+            myElementByTag.style.color = 'red';
+            console.log(myElementByTag);
+    </script>
+</body>
+</html>

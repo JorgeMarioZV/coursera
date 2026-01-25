@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        isLocalStorageSupported();
+
+        function isLocalStorageSupported() {
+            try {
+                const testKey = '__test__';
+                localStorage.setItem(testKey, testKey);
+                localStorage.removeItem(testKey);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        if (isLocalStorageSupported()) {
+            console.log('LocalStorage is supported in this browser!');
+        } else {
+            console.log('LocalStorage is NOT supported in this browser.');
+        }
+    </script>
+</body>
+</html>

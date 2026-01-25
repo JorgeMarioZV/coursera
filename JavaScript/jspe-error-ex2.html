@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try {
+            const obj = undefined;
+            const propertyValue = obj.property; // This will throw a TypeError. Attempting to access 'property' of an undefined object.
+            console.log("Property Value: " + propertyValue);
+            console.log("This message WILL be reached due to the error handling through the try-catch block.");            
+        } catch (error) {
+            console.error("An error occurred (while accessing the property): " + error.message);
+            console.log("This message is reached because the error was caught and handled.\nProgram continues after error handling.");
+        }
+    </script>
+</body>
+</html>
