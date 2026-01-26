@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent">
+        <p>Child 1</p>
+        <p>Child 2</p>
+    </div>
+
+    <div>
+        <p>First</p>
+        <p>Middle</p>
+        <p>Last</p>
+    </div>
+
+    <script>
+        const parent = document.getElementById("parent");
+        const firstChild = parent.firstElementChild;
+        const lastChild = parent.lastElementChild;
+        // console.log(firstChild);
+        console.log(firstChild.textContent);
+        console.log(lastChild.textContent);
+        
+        const div = document.querySelectorAll('div')[1];
+        const middle = div.querySelector('p:nth-child(2)');
+        const previousSibling = middle.previousElementSibling;
+        const nextSibling = middle.nextElementSibling;
+        const firstChild2 = middle.firstElementChild;
+        const lastChild2 = middle.lastElementChild;
+        console.log(previousSibling.textContent);
+        console.log(nextSibling.textContent);
+        // console.log(firstChild2.textContent);
+        // console.log(lastChild2.textContent);
+        
+        
+
+    </script>
+</body>
+</html>

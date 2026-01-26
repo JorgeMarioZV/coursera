@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="container">
+            <p class="myClass">Paragraph 1</p>
+            <p class="myClass">Paragraph 2</p>
+            <p>Paragraph 3</p>
+        </div>
+
+        <script>
+            const container = document.getElementById("container");
+            const singleElement = container.querySelector(".myClass");
+            const multipleElements = container.querySelectorAll(".myClass");
+
+            console.log(singleElement.textContent);
+            console.log('****************************');
+            for (let index = 0; index < multipleElements.length; index++) {
+                console.log(multipleElements[index].textContent);
+            }
+        </script>
+    </body>
+</html>

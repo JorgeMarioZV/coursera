@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Example</title>
+</head>
+<body>
+    <button id="alertButton">Show Alert</button>
+    <button id="openWindowButton">Open WIndow</button>
+    <button id="goBackButton">Go Back</button>
+    <button id="changeURLButton">Change URL</button>
+    <script>
+        const alertButton = document.getElementById("alertButton");
+        const openWindowButton = document.getElementById("openWindowButton");
+        const goBackButton = document.getElementById("goBackButton");
+        const changeURLButton = document.getElementById("changeURLButton");
+
+        alertButton.addEventListener('click', () => {
+            window.alert("Hello, this is an alert!");
+        });
+        openWindowButton.addEventListener('click', () => {
+            window.open("https://google.com",'_blank');
+        });
+        goBackButton.addEventListener('click', () => {
+            history.back();
+        });
+        changeURLButton.addEventListener('click', () => {
+            location.href = "https://twitter.com";
+        });
+
+    </script>
+</body>
+</html>

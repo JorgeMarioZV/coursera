@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <body>
+        <button id="myButton">Click Me</button>
+
+        <div id="myDiv" class="active">
+            THis is a Div
+            <p id="myParagraph" style="color: red">This is a red paragraph.</p>
+            <!-- p#myParagraph[style]{This is a red paragraph} -->
+             <p id="myText">This is another paragraph formatted</p>
+             <p id="myText2">This is an addition paragraph.</p>
+        </div>
+        <button id="myButton2">Toggle Class</button>
+
+        <script>
+            const myButton = document.getElementById("myButton");
+            myButton.style.backgroundColor = "blue";
+            myButton.style.color = "white";
+            myButton.style.fontSize = "16px";
+
+            const div = document.getElementById("myDiv");
+            const myButton2 = document.getElementById("myButton2");
+
+            function toggleClassAndColor() {
+                div.classList.toggle("active");
+                div.classList.toggle("inactive");
+                if (div.classList.contains("active")) {
+                    div.style.backgroundColor = "green";
+                } else {
+                    div.style.backgroundColor = "yellow";
+                }
+            }
+            myButton2.addEventListener('click', () => toggleClassAndColor());
+
+            const paragraph = document.getElementById("myParagraph");
+            paragraph.setAttribute("style", "color:blue; font-size:18px");
+
+            const paragraph2 = document.getElementById("myText");
+            paragraph2.style.cssText = "color:green; font-weight:bold";
+
+            const paragraph3 = document.getElementById("myText2");
+            paragraph3.style.setProperty("color","purple","important");
+        </script>
+    </body>
+</html>
