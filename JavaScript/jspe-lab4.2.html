@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <!-- weather_report.html should be the original name of this file -->
+    <!-- To fetch data from API you need to have your personal API Key of that particular website (https://openweathermap.org/) from where you will generate request to fetch data. https://openweathermap.org/ -->
+    <!-- Now you will need the URL as well with the help of which data will be fetched for particular city. -->
+    <!-- An API key is like a secret passcode, and a URL is the web address where we get the information. -->
+
+</head>
+<body>
+    <h1>Weather Report</h1>
+    <form id="weatherForm">
+        <label for="city">Enter City: </label>
+        <input type="text" name="city" id="city">
+        <!-- <input type="text" name="city" id="city" value="medellin"> -->
+        <button type="submit">Get Weather Now</button>
+    </form>
+    <div id="weatherInfo"></div>
+    <script src="./weather_report.js"></script>
+</body>
+</html>

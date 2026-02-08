@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <!-- weather_report.html should be the original name of this file -->
+    <!-- To fetch data from API you need to have your personal API Key of that particular website (https://openweathermap.org/) from where you will generate request to fetch data. https://openweathermap.org/ -->
+    <!-- Now you will need the URL as well with the help of which data will be fetched for particular city. -->
+    <!-- An API key is like a secret passcode, and a URL is the web address where we get the information. -->
+
+</head>
+<body>
+    <h1>Weather Report</h1>
+    <form id="weatherForm">
+        <p>Please select how you would like to find your weather informantion:</p>
+        <input type="radio" id="radio-city" name="option" value="city">
+        <label for="radio-city">City</label>
+        <input type="radio" id="radio-coords" name="option" value="coords">
+        <label for="radio-coords">Coordinates</label><br><br>
+        <div id="city-data" style="display: none;">
+            <label for="city">Enter City: </label>
+            <input type="text" name="city" id="city"><br><br>
+            <!-- <input type="text" name="city" id="city" value="medellin"> -->
+        </div>
+        <div id="coords-data" style="display: none;">
+            <label for="longitude">Longitude: </label>
+            <input type="number" name="longitude" id="longitude" step="0.0001" min="-180" max="180">
+            <label for="latitude">Latitude: </label>
+            <input type="number" name="latitude" id="latitude" step="0.0001" min="-90" max="90"><br><br><!-- step="any"  -->
+        </div>
+        <button type="submit">Get Weather Now</button>
+    </form>
+    <div id="weatherInfo"></div>
+    <script src="./weather_report2.js"></script>
+</body>
+</html>

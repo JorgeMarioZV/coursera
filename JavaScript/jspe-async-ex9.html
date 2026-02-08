@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(SECTION 4.2.2) Example: Making GET Requests</title>
+</head>
+<body>
+    <script>
+        const apiURL = 'https://jsonplaceholder.typicode.com/posts/1';
+        fetch(apiURL)
+            .then(response => {
+                return response.json(); // Parse the response as JSONk
+            })
+            .then(data => {
+                // Handle and use the JSON data
+                console.log('Data from the API:', data);
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the fetch
+                console.error('An error occurred:', error);
+            })
+    </script>
+</body>
+</html>

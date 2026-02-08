@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Simulates API requests with callbacks
+        console.log('Step 1: Script just get started');
+        debugger;
+        function getUserInfo(userID, callback) {
+            // Simulates an asynchronous function with undefined execution time
+            console.log('Step 2: getUserInfo function is been executed');
+            debugger;
+            setTimeout(() => {
+                const userInfo = {
+                    name : 'John',
+                    email : 'john@example.com'
+                };
+            // Executes callback once asynchronous task is completed
+                console.log('Step 3: Callback is just going to be executed');
+                debugger;
+                callback(userInfo);
+                console.log('Step 4: Callback has been executed');
+                debugger;
+            }, 1000);
+        }
+
+        function getUserPost(userID, callback) {
+            // Simulates an asynchronous function with undefined execution time
+            console.log('Step 5: getUserPost function is been executed');
+            debugger;
+            setTimeout(() => {
+                const posts = [
+                    'Post1',
+                    'Post2',
+                    'Post3'
+                ];
+            // Executes callback once asynchronous task is completed
+                console.log('Step 6: Callback is just going to be executed again');
+                debugger;
+                callback(posts);
+                console.log('Step 7: Callback has been executed one more time');
+                debugger;
+            }, 3000);
+        }
+
+
+        // My Callback function is defined
+        function mytext() {
+            console.log('\tStep #: Callback Execution is ongoing');
+            debugger;
+            console.log('\tTesting...');
+        }
+
+        
+        // Callback Hell Scenario
+        // Se ejecutan como 3 hilos totalmente independientes debido a la funcion asincrónica setTimeOut y se ejecutan de manera concurrente una vez agendan el tiempo continuando con la ejecución. No se espera a que termine el settimeOut
+        getUserInfo(1, mytext);
+        getUserPost(1, mytext);
+        console.log('*** END ***');
+        
+    </script>
+</body>
+</html>

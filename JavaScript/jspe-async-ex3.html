@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AJAX Example</title>
+</head>
+<body>
+    <button id="loadUserBtn">Load Users</button>
+    <!-- button#myID.myClass1.myClass2[attrib2=property1][attrib3=property2:value21;property3:value22]{Text content} -->
+    <!-- <button id="myID" class="myClass1 myClass2" attrib2="property1" attrib3="property2:value21;property3:value22">Text content</button> -->
+     <div id="userList"></div>
+     <script>
+        document.getElementById('loadUserBtn').addEventListener('click',
+            function() {
+                console.log("Testing...");
+                
+                // AJAX Functionality
+                // Create XMLHttpRequest object:
+                var xhr = new XMLHttpRequest();
+
+                // Define the request or Execute GET request:
+                xhr.open('GET','https://jsonplaceholder.typicode.com/users', true);
+                
+                // Manage/Handle Response:
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 400) {
+                        var users = JSON.parse(xhr.responseText);
+                        displayUsers(users);
+                    } else {
+                        console.error('Error fetching data');
+                    }
+                };
+
+                // Handle network errors
+                xhr.onerror = function() {
+                    console.error('Network error');
+                };
+
+                // // Send the request:
+                xhr.send();
+            }
+        );
+
+        // Function to display users on the pagejjjh
+        function displayUsers(users) {
+            var userListDiv = document.getElementById('userList');
+            userListDiv.innerHTML = '<h2>User List</h2>';
+            var ul = document.createElement('ul');
+
+            users.forEach((user) => {
+                var li = document.createElement('li');
+                li.textContent = user.name;
+                ul.appendChild(li);
+            });
+            userListDiv.appendChild(ul);
+        }
+     </script>
+    
+</body>
+</html>

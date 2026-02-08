@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Simulates API requests with callbacks
+        console.log('Step 1: Script just get started');
+        // debugger;
+        function getUserInfo(userID, callback) {
+            // Simulates an asynchronous function with undefined execution time
+            console.log('Step 2: getUserInfo function is been executed');
+            // debugger;
+            setTimeout(() => {
+                const userInfo = {
+                    name : 'John',
+                    email : 'john@example.com'
+                };
+            // Executes callback once asynchronous task is completed
+                console.log('Step 3: Callback is just going to be executed');
+                // debugger;
+                callback(userInfo);
+                console.log('Step 5: Callback has been executed');
+                for (let index = 0; index < 10; index++) {
+                    console.log(`Step 5.${index}: Callback has been executed`);
+                }
+                // debugger;
+            }, 1500);
+        }
+
+        function getUserPost(userID, callback) {
+            // Simulates an asynchronous function with undefined execution time
+            console.log('Step 4: getUserPost function is been executed');
+            // debugger;
+            setTimeout(() => {
+                const posts = [
+                    'Post1',
+                    'Post2',
+                    'Post3'
+                ];
+            // Executes callback once asynchronous task is completed
+                console.log('Step 6: Callback is just going to be executed again');
+                // debugger;
+                callback(posts);
+                console.log('Step 7: Callback has been executed one more time');
+                for (let index = 0; index < 10; index++) {
+                    console.log(`Step 7.${index}: Callback has been executed one more time`);
+                }
+                // debugger;
+            }, 3000);
+        }
+
+        
+        getUserInfo(1,(UserInfo) => {
+            console.log('\tUser Info:', UserInfo);
+            getUserPost(1,(UserPosts) => {
+                console.log('\tUser Posts:', UserPosts);
+                queueMicrotask(() => { // Esta función asegurar que se ejecute exclusivmanete al terminal el hilo de getUserInfo. Esto lo hice yo con ChatGPT
+                    console.log('*** END ***'); // Esto se ejecuta después de todos los Step 7.X
+                });
+            });
+        });
+        console.log("Hola"); // Ese código va en un hilo diferente a getUserInfo. Bsicamente son concurrentes y se ejecutan en paralelo
+        
+        
+        
+    </script>
+</body>
+</html>
