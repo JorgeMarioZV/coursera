@@ -1,0 +1,99 @@
+/* Basic CSS for the navigation bar */
+* {
+    /* border: 1px black solid; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    padding: 20px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    /* padding: 0; */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* Basic CSS for the form elements */
+body {
+    font-family: Arrial, sans-serif;
+    /* margin: 20px; */
+}
+
+h1 {
+    margin-bottom: 20px;
+    /* margin-left: 20px; */
+}
+
+div {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+label {
+    display: inline-block; /* Esto vuelve bloque en linea un elemento de linea. No funciona el width sin esto*/ 
+    width: 100px;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 200px;
+    padding: 5px;
+}
+
+button {
+    padding: 7px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45A049;
+}
+
+
+/* Basic CSS for the report section */
+h2 {
+    margin-top: 30px;
+}
+
+#report, #result {
+    padding: 10px;
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+#result {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#result img {
+    width: 200px;
+    height: 100px;
+}

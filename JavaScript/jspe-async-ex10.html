@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example: Axios</title>
+</head>
+<body>
+    <script>
+        // Import the Axios Library
+        const axios = require('axios'); // No ejecuta. require() es parte del CommonJS Module System usado en Node.js
+        // import axios from 'axios'; Tampoco sirve
+
+        // Define the API URL
+        const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+        // Make a GET Request
+        axios({
+            method : 'GET',
+            url : apiUrl 
+        })
+            .then(response => {
+                // Handle the successful response
+                console.log('Data from the API:', response.data);
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('An error occurred: ',error);
+                
+            })
+    </script>
+</body>
+</html>
